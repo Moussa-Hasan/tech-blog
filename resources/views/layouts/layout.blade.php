@@ -75,4 +75,6 @@
 
 </body>
 
+<script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+@yield('script')
 </html>

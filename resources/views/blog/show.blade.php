@@ -40,7 +40,7 @@
             <img src="/images/{{ $post->image_path }}" alt="" class="object-cover h-96 w-full">
         </div>
         <div class="text-gray-700 text-lg py-8 px-4 leading-8">
-            {{ $post->description }}
+            {!! $post->description !!}
         </div>
 
     </div>

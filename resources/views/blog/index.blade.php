@@ -35,7 +35,7 @@
                     On: <span class="text-gray-500 italic">{{ date('d-m-Y', strtotime($post->updated_at)) }}</span>
 
                     <p class="text-gray-700 text-l leading-6 py-8">
-                        {{ Illuminate\Support\Str::limit($post->description, 100) }}
+                        {!! Illuminate\Support\Str::limit($post->description, 100) !!}
                     </p>
 
                     <a class="bg-gray-200 text-gray-600 py-4 px-5 rounded-lg hover:bg-gray-300 font-bold uppercase place-self-start duration-300"

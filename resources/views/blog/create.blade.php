@@ -11,11 +11,11 @@
             <input type="text" name="title" placeholder="Title"
                 class="w-full h-20 text-4xl rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">
 
-            <textarea name="description" placeholder="Description"
+            <textarea name="description" placeholder="Description" id="editor" rows="6"
                 class="w-full h-60 text-lg rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none"></textarea>
 
 
-            <div class="flex items-center justify-center w-full">
+            <div class="flex items-center justify-center w-full mt-4">
                 <label for="dropzone-file"
                     class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                     <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -41,4 +41,14 @@
             </div>
         </form>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 @endsection
