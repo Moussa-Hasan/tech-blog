@@ -4,7 +4,7 @@
     {{-- Hero Section --}}
     <div class="hero-bg-image flex flex-col items-center justify-center">
 
-        <h1 class="text-gray-100 text-5xl uppercase font-bold pb-5 text-center">Welcome To My Blog</h1>
+        <h1 class="text-gray-100 text-5xl uppercase font-bold pb-5 text-center">Welcome To Tech Blog</h1>
         <a href="/blog" class="btn bg-gray-100 text-gray-700 py-4 px-5 rounded-lg hover:bg-gray-400 transition duration-200 font-bold uppercase">Start
             Reading</a>
 
@@ -24,7 +24,7 @@
                 interests and goals, such as Python, JavaScript, Java, or C++. Each language has its strengths and
                 applications, so research and choose one to begin with.</p>
             <a class="btn bg-gray-200 text-gray-600 py-4 px-5 rounded-lg hover:bg-gray-300 font-bold uppercase place-self-start"
-                href="/">Read More</a>
+                href="/blog">Read More</a>
         </div>
     </div>
 
@@ -40,26 +40,26 @@
     </div>
 
     {{-- Recent Post --}}
-    <div class="sm:grid grid-cols-2 w-4/5 mx-auto mt-14">
+    <div class="sm:grid grid-cols-2 w-4/5 mx-auto mt-14 mb-14">
         <div class="flex bg-gray-700 text-gray-100 pt-10">
             <div class="block m-auto pt-4 pb-15 w-4/5">
 
                 <ul class="md:flex text-xs gap-2">
                     <li
-                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300">
-                        <a href="/">PHP</a>
+                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300 cursor-pointer">
+                        <a>PHP</a>
                     </li>
                     <li
-                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300">
-                        <a href="/">Programming</a>
+                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300 cursor-pointer">
+                        <a>Programming</a>
                     </li>
                     <li
-                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300">
-                        <a href="/">Languages</a>
+                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300 cursor-pointer">
+                        <a>Languages</a>
                     </li>
                     <li
-                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300">
-                        <a href="/">Backend</a>
+                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300 cursor-pointer">
+                        <a">Backend</a>
                     </li>
                 </ul>
 
@@ -70,7 +70,7 @@
                     dynamic and interactive Web pages. PHP is a widely-used, free, and efficient alternative to
                 </h3>
 
-                <a href="/"
+                <a href="/blog"
                     class="btn bg-transparent border-2 text-gray-100 py-4 px-5 mb-5 rounded-lg font-bold uppercase text-l inline-block hover:bg-gray-100 hover:text-gray-700 transition duration-300">Read
                     More</a>
             </div>

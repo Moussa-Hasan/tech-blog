@@ -2,19 +2,36 @@
 
 @section('content')
     <div class="container m-auto text-center pt-15 pb-8">
-        <h1 class="text-6xl font-bold text-gray-700">Add new post</h1>
+        <h1 class="text-3xl md:text-5xl sm:text-4xl font-bold text-gray-700">Add new post</h1>
     </div>
 
     <div class="container m-auto pt-15 pb-8 px-4">
+
+        <!-- Error Messages -->
+        @if ($errors->any())
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-5 mt-5" role="alert">
+                <strong class="font-bold">Oops! Something went wrong.</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="/blog" method="POST" enctype="multipart/form-data">
             @csrf
+
+            <!-- Title Input with old value -->
             <input type="text" name="title" placeholder="Title"
-                class="w-full h-12 text-xl rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">
+                class="w-full h-12 text-xl rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none"
+                value="{{ old('title') }}">
 
+            <!-- Description Input with old value -->
             <textarea name="description" placeholder="Description" id="editor" rows="6"
-                class="w-full h-60 text-lg rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none"></textarea>
+                class="w-full h-60 text-lg rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">{{ old('description') }}</textarea>
 
-
+            <!-- File Input -->
             <div class="flex items-center justify-center w-full mt-4">
                 <label for="dropzone-file"
                     class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
@@ -32,7 +49,7 @@
                 </label>
             </div>
 
-
+            <!-- Submit Button -->
             <div class="flex justify-center">
                 <button type="submit"
                     class="btn bg-green-200 hover:bg-green-700 text-green-700 hover:text-green-200 transition duration-300 cursor-pointer font-bold rounded-lg uppercase py-3 px-2 mt-7">
@@ -41,7 +58,9 @@
             </div>
         </form>
     </div>
+
 @endsection
+
 
 @section('script')
     <script>

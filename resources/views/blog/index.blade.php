@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="container m-auto text-center pt-15 pb-4 mt-2">
-        <h1 class="text-6xl font-bold text-gray-700">All Posts</h1>
+        <h1 class="text-3xl md:text-5xl sm:text-4xl font-bold text-gray-700">All Posts</h1>
     </div>
 
     @if (Auth::check())
         <div class="flex justify-center">
-            <a class="btn text-white bg-green-500 py-2 px-3 mt-2 rounded-lg hover:bg-green-400 font-bold uppercase duration-300"
+            <a class="btn btn-sm text-white bg-green-500 py-2 px-3 mt-2 rounded-lg hover:bg-green-400 font-bold uppercase duration-300"
                 href="/blog/create">Add new post</a>
         </div>
     @endif
@@ -20,6 +20,12 @@
             </div>
         </div>
     @endif
+
+    <!-- Search Input -->
+    <div class="flex justify-center mt-4">
+        <input type="text" id="searchInput" placeholder="Search posts by title"
+            class="w-full max-w-md border-b-2 border-green-500 py-2 px-2 text-gray-700 focus:outline-none rounded-lg">
+    </div>
 
     <ul class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8">
         @foreach ($posts as $post)
@@ -50,9 +56,9 @@
                         </svg>
                     </a>
                 </div>
-                <img src="/images/{{ $post->image_path }}" alt=""
-                    class="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full"
-                    width="1216" height="640">
+                <a href="/blog/{{ $post->slug }}"><img src="/images/{{ $post->image_path }}" alt=""
+                        class="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full"
+                        width="1216" height="640"></a>
             </li>
         @endforeach
     </ul>

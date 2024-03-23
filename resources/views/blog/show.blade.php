@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <div class="container m-auto text-center pt-15 pb-8">
+    <div class="container m-auto text-center pt-15 pb-8 mt-5">
         <h1 class="text-xl md:text-3xl sm:text-2xl font-bold text-gray-700 px-4">{{ $post->title }}</h1>
         <div class="text-gray-700 mt-4">
             By: <span class="text-gray-500 italic">{{ $post->user->name }}</span>

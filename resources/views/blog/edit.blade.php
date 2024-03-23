@@ -2,15 +2,28 @@
 
 @section('content')
     <div class="container m-auto text-center pt-15 pb-8">
-        <h1 class="text-6xl font-bold text-gray-700">Edit the post</h1>
+        <h1 class="text-3xl md:text-5xl sm:text-4xl font-bold text-gray-700">Edit the post</h1>
     </div>
 
     <div class="container m-auto pt-15 pb-8 px-4">
+
+        <!-- Error Messages -->
+        @if ($errors->any())
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-5 mt-5" role="alert">
+                <strong class="font-bold">Oops! Something went wrong.</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="/blog/{{ $post->slug }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <input type="text" name="title" value="{{ $post->title }}"
-                class="w-full h-20 text-4xl rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">
+                class="w-full h-12 text-xl rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">
 
             <textarea name="description" id="editor"
                 class="w-full h-60 text-lg rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">{{ $post->description }}</textarea>

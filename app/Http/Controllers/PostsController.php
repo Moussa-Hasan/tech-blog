@@ -33,6 +33,12 @@ class PostsController extends Controller
             'title' => 'required',
             'description' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+        ], [
+            'title.required' => 'The title field is required.',
+            'description.required' => 'The description field is required.',
+            'image.required' => 'Please upload an image.',
+            'image.mimes' => 'The image must be a file of type: jpg, png, jpeg.',
+            'image.max' => 'The image may not be greater than 5 MB in size.'
         ]);
 
         // Generate the initial slug
@@ -40,7 +46,7 @@ class PostsController extends Controller
 
         // Check if the slug already exists in the database
         if (Post::where('slug', $slug)->exists()) {
-            // Modify it if exist
+            // Modify it if exists
             $suffix = 1;
             while (Post::where('slug', $slug)->exists()) {
                 $slug = Str::slug($request->title, '-') . '-' . $suffix;
@@ -56,11 +62,11 @@ class PostsController extends Controller
             'slug' => $slug,
             'image_path' => $newImageName,
             'user_id' => auth()->user()->id
-
         ]);
 
-        return redirect('/blog');
+        return redirect('/blog')->with('message', 'Post created successfully.');
     }
+
 
     /**
      * Display the specified resource.
@@ -87,6 +93,11 @@ class PostsController extends Controller
             'title' => 'required',
             'description' => 'required',
             'image' => 'nullable|mimes:jpg,png,jpeg|max:5048'
+        ],  [
+            'title.required' => 'The title field is required.',
+            'description.required' => 'The description field is required.',
+            'image.mimes' => 'The image must be a file of type: jpg, png, jpeg.',
+            'image.max' => 'The image may not be greater than 5 MB in size.'
         ]);
 
         $newImageName = null;

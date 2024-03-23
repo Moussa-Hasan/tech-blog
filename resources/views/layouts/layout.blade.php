@@ -19,50 +19,10 @@
 
 <body>
 
-    <header class="p-6">
-        @if (Route::has('login'))
-            <div class="flex justify-center">
-                <a href="/"
-                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-red-500 focus:ring-2 focus:ring-primary-500 rounded-sm px-3 py-2 bg-white">
-                    Home
-                </a>
-                <a href="/blog"
-                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-red-500 focus:ring-2 focus:ring-primary-500 rounded-sm px-3 py-2 bg-white">
-                    Blog
-                </a>
-                @auth
-                    <a href="{{ url('/profile') }}"
-                        class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-red-500 focus:ring-2 focus:ring-primary-500 rounded-sm px-3 py-2 bg-white">
-                        Profile
-                    </a>
-                    {{-- <a href="#"
-                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-red-500 focus:ring-2 focus:ring-primary-500 rounded-sm px-3 py-2 bg-white">
-                    {{ Auth::user()->name }}
-                </a> --}}
-                    <form class="flex" method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <a href="route('logout')"
-                            onclick="event.preventDefault();
-                                this.closest('form').submit();"
-                            class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-red-500 focus:ring-2 focus:ring-primary-500 rounded-sm px-3 py-2 bg-white">
-                            Logout
-                        </a>
-                    </form>
-                @else
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                            class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-red-500 focus:ring-2 focus:ring-primary-500 rounded-sm px-3 py-2 bg-white">
-                            Register
-                        </a>
-                    @endif
-                    <a href="{{ route('login') }}"
-                        class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-red-500 focus:ring-2 focus:ring-primary-500 rounded-sm px-3 py-2 bg-white">
-                        Log in
-                    </a>
-                @endauth
-            </div>
-        @endif
-    </header>
+    {{-- Header --}}
+    <div>
+        @include('layouts.header')
+    </div>
 
     <div>
         @yield('content')
@@ -77,4 +37,5 @@
 
 <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
 @yield('script')
+
 </html>
