@@ -24,7 +24,7 @@
     <!-- Search Input -->
     <div class="flex justify-center mt-4">
         <input type="text" id="searchInput" placeholder="Search posts by title"
-            class="w-full max-w-md border-b-2 border-green-500 py-2 px-2 text-gray-700 focus:outline-none rounded-lg">
+            class="w-full max-w-md border-b-2 border-green-500 py-2 px-2 text-gray-700 focus:outline-none rounded-lg shadow-sm">
     </div>
 
     <ul class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8">
