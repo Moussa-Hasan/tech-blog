@@ -86,21 +86,29 @@ class PostsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+            'image' => 'nullable|mimes:jpg,png,jpeg|max:5048'
         ]);
 
-        $newImageName = uniqid() . '-' . $slug . '-' . $request->image->extension();
-        $request->image->move(public_path('images'), $newImageName);
+        $newImageName = null;
+
+        if ($request->hasFile('image')) {
+            $newImageName = uniqid() . '-' . $slug . '-' . $request->image->extension();
+            $request->image->move(public_path('images'), $newImageName);
+        }
+
+        $postData = [
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'slug' => $slug,
+            'user_id' => auth()->user()->id
+        ];
+
+        if ($newImageName !== null) {
+            $postData['image_path'] = $newImageName;
+        }
 
         Post::where('slug', $slug)
-            ->update([
-                'title' => $request->input('title'),
-                'description' => $request->input('description'),
-                'slug' => $slug,
-                'image_path' => $newImageName,
-                'user_id' => auth()->user()->id
-
-            ]);
+            ->update($postData);
 
         return redirect('/blog/' . $slug)->with('message', 'Edit Success');
     }

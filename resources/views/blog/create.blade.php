@@ -9,7 +9,7 @@
         <form action="/blog" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="text" name="title" placeholder="Title"
-                class="w-full h-20 text-4xl rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">
+                class="w-full h-12 text-xl rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">
 
             <textarea name="description" placeholder="Description" id="editor" rows="6"
                 class="w-full h-60 text-lg rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none"></textarea>
