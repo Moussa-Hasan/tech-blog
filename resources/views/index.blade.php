@@ -5,7 +5,7 @@
     <div class="hero-bg-image flex flex-col items-center justify-center">
 
         <h1 class="text-gray-100 text-5xl uppercase font-bold pb-5 text-center">Welcome To My Blog</h1>
-        <a href="/blog" class="bg-gray-100 text-gray-700 py-4 px-5 rounded-lg hover:bg-gray-400 transition duration-200 font-bold uppercase">Start
+        <a href="/blog" class="btn bg-gray-100 text-gray-700 py-4 px-5 rounded-lg hover:bg-gray-400 transition duration-200 font-bold uppercase">Start
             Reading</a>
 
     </div>
@@ -23,7 +23,7 @@
             <p class="text-gray-500 text-sm py-4 leading-6">Start by selecting a programming language that aligns with your
                 interests and goals, such as Python, JavaScript, Java, or C++. Each language has its strengths and
                 applications, so research and choose one to begin with.</p>
-            <a class="bg-gray-200 text-gray-600 py-4 px-5 rounded-lg hover:bg-gray-300 font-bold uppercase place-self-start"
+            <a class="btn bg-gray-200 text-gray-600 py-4 px-5 rounded-lg hover:bg-gray-300 font-bold uppercase place-self-start"
                 href="/">Read More</a>
         </div>
     </div>
@@ -71,7 +71,7 @@
                 </h3>
 
                 <a href="/"
-                    class="bg-transparent border-2 text-gray-100 py-4 px-5 mb-5 rounded-lg font-bold uppercase text-l inline-block hover:bg-gray-100 hover:text-gray-700 transition duration-300">Read
+                    class="btn bg-transparent border-2 text-gray-100 py-4 px-5 mb-5 rounded-lg font-bold uppercase text-l inline-block hover:bg-gray-100 hover:text-gray-700 transition duration-300">Read
                     More</a>
             </div>
         </div>

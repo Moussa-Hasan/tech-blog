@@ -35,7 +35,7 @@
 
             <div class="flex justify-center">
                 <button type="submit"
-                    class="bg-green-200 hover:bg-green-700 text-green-700 hover:text-green-200 transition duration-300 cursor-pointer font-bold rounded-lg uppercase py-3 px-2 mt-7">
+                    class="btn bg-green-200 hover:bg-green-700 text-green-700 hover:text-green-200 transition duration-300 cursor-pointer font-bold rounded-lg uppercase py-3 px-2 mt-7">
                     Submit the post
                 </button>
             </div>

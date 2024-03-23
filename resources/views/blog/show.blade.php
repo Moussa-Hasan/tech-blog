@@ -21,7 +21,7 @@
     <div class="flex justify-center mb-4">
         @if (Auth::user() && Auth::user()->id == $post->user_id)
             <a href="/blog/{{ $post->slug }}/edit"
-                class="bg-green-200 hover:bg-green-700 text-green-700 hover:text-green-200 py-2 px-3 rounded-lg font-bold inline-block uppercase mr-2 transition duration-300 cursor-pointer">Edit</a>
+                class="btn btn-sm bg-green-200 hover:bg-green-700 text-green-700 hover:text-green-200 py-2 px-3 rounded-lg font-bold inline-block uppercase mr-2 transition duration-300 cursor-pointer">Edit</a>
         @endif
 
         @if (Auth::user() && Auth::user()->id == $post->user_id)
@@ -29,7 +29,7 @@
                 @csrf
                 @method('delete')
                 <button
-                    class="bg-red-200 hover:bg-red-700 text-red-700 hover:text-red-200 py-2 px-3 rounded-lg font-bold inline-block uppercase ml-2 transition duration-300 cursor-pointer">Delete</button>
+                    class="btn btn-sm bg-red-200 hover:bg-red-700 text-red-700 hover:text-red-200 py-2 px-3 rounded-lg font-bold inline-block uppercase ml-2 transition duration-300 cursor-pointer">Delete</button>
             </form>
         @endif
     </div>
