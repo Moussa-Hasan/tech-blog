@@ -14,9 +14,13 @@
         <h1 class="text-xl md:text-3xl sm:text-2xl font-bold text-gray-700 px-4">{{ $post->title }}</h1>
         <div class="text-gray-700 mt-4">
             By: <span class="text-gray-500 italic">{{ $post->user->name }}</span>
+            &nbsp;&nbsp;&nbsp; <!-- spaces -->
             On: <span class="text-gray-500 italic">{{ date('d-m-Y', strtotime($post->updated_at)) }}</span>
+            &nbsp;&nbsp;&nbsp; <!-- spaces -->
+            Category: <span class="text-gray-500 italic">{{ $post->category }}</span>
         </div>
     </div>
+
 
     <div class="flex justify-center">
         @if (Auth::user() && Auth::user()->id == $post->user_id)
@@ -44,6 +48,7 @@
         </div>
     </div>
 @endsection
+
 
 @section('script')
     <script>

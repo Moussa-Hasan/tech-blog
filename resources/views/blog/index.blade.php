@@ -7,14 +7,14 @@
 
     @if (Auth::check())
         <div class="flex justify-center">
-            <a class="btn btn-sm text-white bg-green-500 py-2 px-3 mt-2 rounded-lg hover:bg-green-400 font-bold uppercase duration-300"
+            <a class="btn btn-sm text-white bg-green-500 py-2 px-4 mt-2 rounded-lg hover:bg-green-400 font-bold uppercase duration-300"
                 href="/blog/create">Add new post</a>
         </div>
     @endif
 
     @if (session()->has('message'))
         <div id="alert" class="flex justify-center mt-2">
-            <div class="flex justify-center p-4 mb-4 text-sm w-48 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+            <div class="flex justify-center px-14 py-4 mb-4 text-sm w-92 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
                 role="alert">
                 <span class="font-medium">{{ session()->get('message') }}</span>
             </div>
@@ -22,12 +22,13 @@
     @endif
 
     <!-- Search Input -->
-    <div class="flex justify-center mt-4">
+    <div class="flex justify-center mt-4 px-4 sm:px-0">
         <input type="text" id="searchInput" placeholder="Search posts by title"
-            class="w-full max-w-md border-b-2 border-gray-600 py-2 px-2 text-gray-700 focus:outline-none rounded-lg shadow-sm">
+            class="w-full max-w-md border-b-2 border-gray-600 py-2 px-2 sm:px-4 text-gray-700 focus:outline-none rounded-lg shadow-sm">
     </div>
 
-    <ul class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8">
+
+    <ul id="postList" class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8">
         @foreach ($posts as $post)
             <li class="relative flex flex-col sm:flex-row xl:flex-col items-start">
                 <div class="order-1 sm:ml-6 xl:ml-0">
@@ -65,6 +66,11 @@
             </li>
         @endforeach
     </ul>
+
+    <!-- Pagination Links -->
+    <div class="my-4 mx-10">
+        {{ $posts->links() }}
+    </div>
 @endsection
 
 @section('script')
@@ -76,6 +82,23 @@
                     alert.style.display = 'none';
                 }, 2000);
             }
+
+            // Function to filter posts based on search input
+            function filterPosts() {
+                var input = document.getElementById('searchInput').value.toLowerCase();
+                var posts = document.getElementById('postList').getElementsByTagName('li');
+                for (var i = 0; i < posts.length; i++) {
+                    var title = posts[i].querySelector('h3').innerText.toLowerCase();
+                    if (title.indexOf(input) > -1) {
+                        posts[i].style.display = '';
+                    } else {
+                        posts[i].style.display = 'none';
+                    }
+                }
+            }
+
+            // Attach event listener to search input
+            document.getElementById('searchInput').addEventListener('input', filterPosts);
         });
     </script>
 @endsection

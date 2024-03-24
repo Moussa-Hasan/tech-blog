@@ -28,6 +28,41 @@
             <textarea name="description" id="editor"
                 class="w-full h-60 text-lg rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">{{ $post->description }}</textarea>
 
+            <!-- Category Select Input -->
+            <select name="category"
+                class="w-full h-16 text-lg rounded-lg shadow-md border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 mt-5 outline-none">
+                <option value="" disabled>Select a category</option>
+                <option value="general" {{ $post->category == 'general' ? 'selected' : '' }}>General</option>
+                <option value="programming" {{ $post->category == 'programming' ? 'selected' : '' }}>Programming</option>
+                <option value="web-development" {{ $post->category == 'web-development' ? 'selected' : '' }}>Web Development
+                </option>
+                <option value="mobile-development" {{ $post->category == 'mobile-development' ? 'selected' : '' }}>Mobile
+                    Development</option>
+                <option value="data-science" {{ $post->category == 'data-science' ? 'selected' : '' }}>Data Science</option>
+                <option value="machine-learning" {{ $post->category == 'machine-learning' ? 'selected' : '' }}>Machine
+                    Learning</option>
+                <option value="artificial-intelligence"
+                    {{ $post->category == 'artificial-intelligence' ? 'selected' : '' }}>Artificial Intelligence</option>
+                <option value="hardware" {{ $post->category == 'hardware' ? 'selected' : '' }}>Hardware</option>
+                <option value="cybersecurity" {{ $post->category == 'cybersecurity' ? 'selected' : '' }}>Cybersecurity
+                </option>
+                <option value="networking" {{ $post->category == 'networking' ? 'selected' : '' }}>Networking</option>
+                <option value="cloud-computing" {{ $post->category == 'cloud-computing' ? 'selected' : '' }}>Cloud
+                    Computing</option>
+                <option value="blockchain" {{ $post->category == 'blockchain' ? 'selected' : '' }}>Blockchain</option>
+                <option value="robotics" {{ $post->category == 'robotics' ? 'selected' : '' }}>Robotics</option>
+                <option value="ui-ux" {{ $post->category == 'ui-ux' ? 'selected' : '' }}>UI/UX Design</option>
+                <option value="virtual-reality" {{ $post->category == 'virtual-reality' ? 'selected' : '' }}>Virtual
+                    Reality</option>
+                <option value="augmented-reality" {{ $post->category == 'augmented-reality' ? 'selected' : '' }}>Augmented
+                    Reality</option>
+                <option value="iot" {{ $post->category == 'iot' ? 'selected' : '' }}>Internet of Things (IoT)</option>
+                <option value="big-data" {{ $post->category == 'big-data' ? 'selected' : '' }}>Big Data</option>
+                <option value="nanotechnology" {{ $post->category == 'nanotechnology' ? 'selected' : '' }}>Nanotechnology
+                </option>
+            </select>
+
+
             <div class="flex items-center justify-center w-full mt-4">
                 <label for="dropzone-file"
                     class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">

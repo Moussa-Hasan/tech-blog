@@ -8,12 +8,14 @@ use App\Models\Post;
 
 class PostsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('blog.index')->with('posts', Post::get());
+        $posts = Post::paginate(6);
+        return view('blog.index', compact('posts'));
     }
 
     /**
@@ -32,13 +34,15 @@ class PostsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
+            'category' => 'required',
         ], [
             'title.required' => 'The title field is required.',
             'description.required' => 'The description field is required.',
             'image.required' => 'Please upload an image.',
             'image.mimes' => 'The image must be a file of type: jpg, png, jpeg.',
-            'image.max' => 'The image may not be greater than 5 MB in size.'
+            'image.max' => 'The image may not be greater than 5 MB in size.',
+            'category.required' => 'Please select a category.',
         ]);
 
         // Generate the initial slug
@@ -53,6 +57,7 @@ class PostsController extends Controller
                 $suffix++;
             }
         }
+
         $newImageName = uniqid() . '-' . $slug . '-' . $request->image->extension();
         $request->image->move(public_path('images'), $newImageName);
 
@@ -61,6 +66,7 @@ class PostsController extends Controller
             'description' => $request->input('description'),
             'slug' => $slug,
             'image_path' => $newImageName,
+            'category' => $request->input('category'),
             'user_id' => auth()->user()->id
         ]);
 
@@ -92,12 +98,15 @@ class PostsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' => 'nullable|mimes:jpg,png,jpeg|max:5048'
-        ],  [
+            'image' => 'nullable|mimes:jpg,png,jpeg|max:5048',
+            'category' => 'required',
+        ], [
             'title.required' => 'The title field is required.',
             'description.required' => 'The description field is required.',
+            'image.required' => 'Please upload an image.',
             'image.mimes' => 'The image must be a file of type: jpg, png, jpeg.',
-            'image.max' => 'The image may not be greater than 5 MB in size.'
+            'image.max' => 'The image may not be greater than 5 MB in size.',
+            'category.required' => 'Please select a category.',
         ]);
 
         $newImageName = null;
@@ -111,6 +120,7 @@ class PostsController extends Controller
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'slug' => $slug,
+            'category' => $request->input('category'),
             'user_id' => auth()->user()->id
         ];
 
@@ -133,4 +143,5 @@ class PostsController extends Controller
 
         return redirect('/blog')->with('message', 'Delete Success');
     }
+
 }

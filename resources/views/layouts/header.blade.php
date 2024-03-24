@@ -13,6 +13,12 @@
                     @if (Route::has('login'))
                         <li><a href="/">Home</a></li>
                         <li><a href="/blog">Blog</a></li>
+                        {{-- <li>
+                            <a>Category</a>
+                            <ul class="p-2">
+                                <li><a>General</a></li>
+                            </ul>
+                        </li> --}}
                         @auth
                             <li><a href="{{ url('/profile') }}">Profile</a></li>
                             <li>
@@ -38,6 +44,14 @@
                 @if (Route::has('login'))
                     <li><a href="/">Home</a></li>
                     <li><a href="/blog">Blog</a></li>
+                    {{-- <li>
+                        <details>
+                            <summary>Categories</summary>
+                            <ul class="p-2">
+                                <li><a>General</a></li>
+                            </ul>
+                        </details>
+                    </li> --}}
                     @auth
                         <li><a href="{{ url('/profile') }}">Profile</a></li>
                         <li>

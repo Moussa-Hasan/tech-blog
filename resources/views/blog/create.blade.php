@@ -24,12 +24,36 @@
 
             <!-- Title Input with old value -->
             <input type="text" name="title" placeholder="Title"
-                class="w-full h-12 text-xl rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none"
+                class="w-full h-12 text-xl rounded-lg shadow-md border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none"
                 value="{{ old('title') }}">
 
             <!-- Description Input with old value -->
             <textarea name="description" placeholder="Description" id="editor" rows="6"
                 class="w-full h-60 text-lg rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">{{ old('description') }}</textarea>
+
+            <select name="category"
+                class="w-full h-16 text-lg rounded-lg shadow-md border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 mt-5 outline-none">
+                <option value="" disabled selected>Select a category</option>
+                <option value="general">General</option>
+                <option value="programming">Programming</option>
+                <option value="web-development">Web Development</option>
+                <option value="mobile-development">Mobile Development</option>
+                <option value="data-science">Data Science</option>
+                <option value="machine-learning">Machine Learning</option>
+                <option value="artificial-intelligence">Artificial Intelligence</option>
+                <option value="hardware">Hardware</option>
+                <option value="cybersecurity">Cybersecurity</option>
+                <option value="networking">Networking</option>
+                <option value="cloud-computing">Cloud Computing</option>
+                <option value="blockchain">Blockchain</option>
+                <option value="robotics">Robotics</option>
+                <option value="ui-ux">UI/UX Design</option>
+                <option value="virtual-reality">Virtual Reality</option>
+                <option value="augmented-reality">Augmented Reality</option>
+                <option value="iot">Internet of Things (IoT)</option>
+                <option value="big-data">Big Data</option>
+                <option value="nanotechnology">Nanotechnology</option>
+            </select>
 
             <!-- File Input -->
             <div class="flex items-center justify-center w-full mt-4">
