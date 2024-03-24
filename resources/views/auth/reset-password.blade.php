@@ -1,3 +1,4 @@
+<link rel="icon" href="/images/icons8-blog-16.png" type="image/x-icon">
 <x-guest-layout>
     <form method="POST" action="{{ route('password.store') }}">
         @csrf

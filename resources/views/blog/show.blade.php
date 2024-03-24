@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <div class="container m-auto text-center pt-15 pb-8 mt-5">
+    <div class="container mx-auto text-center sm:px-4 md:px-8 lg:px-16 xl:px-24 pt-8 pb-8 mt-5">
         <h1 class="text-xl md:text-3xl sm:text-2xl font-bold text-gray-700 px-4">{{ $post->title }}</h1>
         <div class="text-gray-700 mt-4">
             By: <span class="text-gray-500 italic">{{ $post->user->name }}</span>
@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="flex justify-center mb-4">
+    <div class="flex justify-center">
         @if (Auth::user() && Auth::user()->id == $post->user_id)
             <a href="/blog/{{ $post->slug }}/edit"
                 class="btn btn-sm bg-green-200 hover:bg-green-700 text-green-700 hover:text-green-200 py-2 px-3 rounded-lg font-bold inline-block uppercase mr-2 transition duration-300 cursor-pointer">Edit</a>
@@ -34,15 +34,14 @@
         @endif
     </div>
 
-
-    <div class="container m-auto pt-15 pb-8">
-        <div class="flex">
-            <img src="/images/{{ $post->image_path }}" alt="" class="object-cover h-96 w-full">
+    <div class="container mx-auto px-4 lg:px-8 py-8">
+        <div class="flex justify-center">
+            <img src="/images/{{ $post->image_path }}" alt=""
+                class="object-cover h-auto max-w-full rounded-sm shadow-sm">
         </div>
-        <div class="text-gray-700 text-lg py-8 px-4 leading-8">
+        <div class="text-gray-700 text-lg py-8 leading-8 max-w-screen-lg mx-auto">
             {!! $post->description !!}
         </div>
-
     </div>
 @endsection
 

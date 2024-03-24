@@ -56,9 +56,12 @@
                         </svg>
                     </a>
                 </div>
-                <a href="/blog/{{ $post->slug }}"><img src="/images/{{ $post->image_path }}" alt=""
-                        class="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full"
-                        width="1216" height="640"></a>
+                <a href="/blog/{{ $post->slug }}">
+                    <img src="/images/{{ $post->image_path }}" alt=""
+                        class="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-full transition duration-300 ease-in-out transform hover:opacity-75"
+                        width="1216" height="640">
+
+                </a>
             </li>
         @endforeach
     </ul>

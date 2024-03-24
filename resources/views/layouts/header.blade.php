@@ -31,7 +31,7 @@
                     @endif
                 </ul>
             </div>
-            <a href="/" class="btn btn-ghost text-xl text-gray-700">Tech Blog</a>
+            <a href="/" class="btn btn-ghost text-xl text-slate-800">Tech Blog</a>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
