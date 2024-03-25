@@ -23,7 +23,29 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        $categories = [
+            'general',
+            'programming',
+            'web-development',
+            'mobile-development',
+            'data-science',
+            'machine-learning',
+            'artificial-intelligence',
+            'hardware',
+            'cybersecurity',
+            'networking',
+            'cloud-computing',
+            'blockchain',
+            'robotics',
+            'ui-ux',
+            'virtual-reality',
+            'augmented-reality',
+            'iot',
+            'big-data',
+            'nanotechnology'
+        ];
+
+        return view('blog.create', compact('categories'));
     }
 
     /**
@@ -87,7 +109,30 @@ class PostsController extends Controller
      */
     public function edit(string $slug)
     {
-        return view('blog.edit')->with('post', Post::where('slug', $slug)->first());
+        $categories = [
+            'general',
+            'programming',
+            'web-development',
+            'mobile-development',
+            'data-science',
+            'machine-learning',
+            'artificial-intelligence',
+            'hardware',
+            'cybersecurity',
+            'networking',
+            'cloud-computing',
+            'blockchain',
+            'robotics',
+            'ui-ux',
+            'virtual-reality',
+            'augmented-reality',
+            'iot',
+            'big-data',
+            'nanotechnology'
+        ];
+
+        $post = Post::where('slug', $slug)->first();
+        return view('blog.edit', compact('post', 'categories'));
     }
 
     /**
@@ -143,5 +188,4 @@ class PostsController extends Controller
 
         return redirect('/blog')->with('message', 'Delete Success');
     }
-
 }

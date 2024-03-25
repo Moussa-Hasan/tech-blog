@@ -21,12 +21,11 @@
         </div>
     @endif
 
-    <!-- Search Input -->
-    <div class="flex justify-center mt-4 px-4 sm:px-0">
+    <!-- Search Input & unused for now -->
+    {{-- <div class="flex justify-center mt-4 px-4 sm:px-0">
         <input type="text" id="searchInput" placeholder="Search posts by title"
             class="w-full max-w-md border-b-2 border-gray-600 py-2 px-2 sm:px-4 text-gray-700 focus:outline-none rounded-lg shadow-sm">
-    </div>
-
+    </div> --}}
 
     <ul id="postList" class="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8">
         @foreach ($posts as $post)
@@ -82,23 +81,6 @@
                     alert.style.display = 'none';
                 }, 2000);
             }
-
-            // Function to filter posts based on search input
-            function filterPosts() {
-                var input = document.getElementById('searchInput').value.toLowerCase();
-                var posts = document.getElementById('postList').getElementsByTagName('li');
-                for (var i = 0; i < posts.length; i++) {
-                    var title = posts[i].querySelector('h3').innerText.toLowerCase();
-                    if (title.indexOf(input) > -1) {
-                        posts[i].style.display = '';
-                    } else {
-                        posts[i].style.display = 'none';
-                    }
-                }
-            }
-
-            // Attach event listener to search input
-            document.getElementById('searchInput').addEventListener('input', filterPosts);
         });
     </script>
 @endsection

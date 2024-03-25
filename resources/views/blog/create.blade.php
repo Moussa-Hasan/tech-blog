@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="container m-auto text-center pt-15 pb-8">
+    <div class="container m-auto text-center pt-15 pb-8 mt-3">
         <h1 class="text-3xl md:text-5xl sm:text-4xl font-bold text-gray-700">Add new post</h1>
     </div>
 
@@ -9,7 +9,7 @@
 
         <!-- Error Messages -->
         @if ($errors->any())
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-5 mt-5" role="alert">
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-5" role="alert">
                 <strong class="font-bold">Oops! Something went wrong.</strong>
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -31,29 +31,16 @@
             <textarea name="description" placeholder="Description" id="editor" rows="6"
                 class="w-full h-60 text-lg rounded-lg shadow-lg border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 outline-none">{{ old('description') }}</textarea>
 
+            <!-- category Select with old value-->
             <select name="category"
                 class="w-full h-16 text-lg rounded-lg shadow-md border-b border-gray-300 bg-white text-gray-700 p-4 mb-5 mt-5 outline-none">
-                <option value="" disabled selected>Select a category</option>
-                <option value="general">General</option>
-                <option value="programming">Programming</option>
-                <option value="web-development">Web Development</option>
-                <option value="mobile-development">Mobile Development</option>
-                <option value="data-science">Data Science</option>
-                <option value="machine-learning">Machine Learning</option>
-                <option value="artificial-intelligence">Artificial Intelligence</option>
-                <option value="hardware">Hardware</option>
-                <option value="cybersecurity">Cybersecurity</option>
-                <option value="networking">Networking</option>
-                <option value="cloud-computing">Cloud Computing</option>
-                <option value="blockchain">Blockchain</option>
-                <option value="robotics">Robotics</option>
-                <option value="ui-ux">UI/UX Design</option>
-                <option value="virtual-reality">Virtual Reality</option>
-                <option value="augmented-reality">Augmented Reality</option>
-                <option value="iot">Internet of Things (IoT)</option>
-                <option value="big-data">Big Data</option>
-                <option value="nanotechnology">Nanotechnology</option>
+                <option value="" disabled>Select a category</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category }}" {{ old('category') == $category ? 'selected' : '' }}>
+                        {{ ucfirst(str_replace('-', ' ', $category)) }}</option>
+                @endforeach
             </select>
+
 
             <!-- File Input -->
             <div class="flex items-center justify-center w-full mt-4">

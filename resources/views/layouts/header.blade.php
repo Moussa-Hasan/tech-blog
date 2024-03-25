@@ -71,6 +71,8 @@
             </ul>
         </div>
         <div class="navbar-end">
-
+            <div class="form-control">
+                <input type="text" placeholder="Search" class="input input-bordered w-26 md:w-auto" />
+            </div>
         </div>
     </div>
