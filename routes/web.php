@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[PagesController::class , 'index']);
 Route::get('/user',[PagesController::class , 'user']);
 Route::resource('/blog', PostsController::class);
+Route::get('/search', 'App\Http\Controllers\SearchController@search')->name('search');
 
 Route::get('/profile', function () {
     return view('dashboard');

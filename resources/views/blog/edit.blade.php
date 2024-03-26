@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container m-auto text-center pt-15 pb-8">
-        <h1 class="text-3xl md:text-5xl sm:text-4xl font-bold text-gray-700">Edit the post</h1>
+        <h1 class="text-xl md:text-2xl sm:text-2xl font-bold text-gray-700">Edit the post</h1>
     </div>
 
     <div class="container m-auto pt-15 pb-8 px-4">
