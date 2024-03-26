@@ -27,28 +27,28 @@
 
     {{-- Blog Categories --}}
     <div class="text-center bg-slate-700 text-gray-100 p-14">
-        <h2 class="text-2xl">Blog Categories</h2>
+        <h2 class="text-2xl font-semibold">Blog Categories</h2>
         <div class="container mx-auto pt-10 sm:grid grid-cols-4">
-            <div class="font-semibold text-xl py-2 px-2">General</div>
-            <div class="font-semibold text-xl py-2 px-2">Programming</div>
-            <div class="font-semibold text-xl py-2 px-2">Web Development</div>
-            <div class="font-semibold text-xl py-2 px-2">Mobile Development</div>
-            <div class="font-semibold text-xl py-2 px-2">Data Science</div>
-            <div class="font-semibold text-xl py-2 px-2">Machine Learning</div>
-            <div class="font-semibold text-xl py-2 px-2">Artificial Intelligence</div>
-            <div class="font-semibold text-xl py-2 px-2">Hardware</div>
-            <div class="font-semibold text-xl py-2 px-2">Cybersecurity</div>
-            <div class="font-semibold text-xl py-2 px-2">Networking</div>
-            <div class="font-semibold text-xl py-2 px-2">Cloud Computing</div>
-            <div class="font-semibold text-xl py-2 px-2">Blockchain</div>
-            <div class="font-semibold text-xl py-2 px-2">Robotics</div>
-            <div class="font-semibold text-xl py-2 px-2">UI/UX</div>
-            <div class="font-semibold text-xl py-2 px-2">Virtual Reality</div>
-            <div class="font-semibold text-xl py-2 px-2">Augmented Reality</div>
-            <div class="font-semibold text-xl py-2 px-2">Internet of Things (IoT)</div>
-            <div class="font-semibold text-xl py-2 px-2">Big Data</div>
-            <div class="font-semibold text-xl py-2 px-2">Nanotechnology</div>
-            <div class="font-semibold text-xl py-2 px-2">Software Engineering</div>
+            <div class="text-xl py-2 px-2">General</div>
+            <div class="text-xl py-2 px-2">Programming</div>
+            <div class="text-xl py-2 px-2">Web Development</div>
+            <div class="text-xl py-2 px-2">Mobile Development</div>
+            <div class="text-xl py-2 px-2">Data Science</div>
+            <div class="text-xl py-2 px-2">Machine Learning</div>
+            <div class="text-xl py-2 px-2">Artificial Intelligence</div>
+            <div class="text-xl py-2 px-2">Hardware</div>
+            <div class="text-xl py-2 px-2">Cybersecurity</div>
+            <div class="text-xl py-2 px-2">Networking</div>
+            <div class="text-xl py-2 px-2">Cloud Computing</div>
+            <div class="text-xl py-2 px-2">Blockchain</div>
+            <div class="text-xl py-2 px-2">Robotics</div>
+            <div class="text-xl py-2 px-2">UI/UX</div>
+            <div class="text-xl py-2 px-2">Virtual Reality</div>
+            <div class="text-xl py-2 px-2">Augmented Reality</div>
+            <div class="text-xl py-2 px-2">Internet of Things (IoT)</div>
+            <div class="text-xl py-2 px-2">Big Data</div>
+            <div class="text-xl py-2 px-2">Nanotechnology</div>
+            <div class="text-xl py-2 px-2">Software Engineering</div>
         </div>
     </div>
 
