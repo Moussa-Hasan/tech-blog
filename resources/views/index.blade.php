@@ -59,19 +59,19 @@
 
                 <ul class="md:flex text-xs gap-2">
                     <li
-                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300 cursor-pointer">
+                        class="bg-gray-100 text-slate-800 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-100 cursor-pointer">
                         <a>Time</a>
                     </li>
                     <li
-                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300 cursor-pointer">
+                        class="bg-gray-100 text-slate-800 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-100 cursor-pointer">
                         <a>Programming</a>
                     </li>
                     <li
-                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300 cursor-pointer">
+                        class="bg-gray-100 text-slate-800 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-100 cursor-pointer">
                         <a>Productivity</a>
                     </li>
                     <li
-                        class="bg-gray-100 text-gray-700 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-300 cursor-pointer">
+                        class="bg-gray-100 text-slate-800 p-2 rounded inline-block my-1 md:my-0 hover:bg-yellow-500 hover:text-gray-100 transition duration-100 cursor-pointer">
                         <a>Career</a>
                     </li>
                 </ul>
