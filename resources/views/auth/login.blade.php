@@ -1,4 +1,6 @@
-<link rel="icon" href="/images/icons8-blog-16.png" type="image/x-icon">
+@extends('layouts.layout')
+
+@section('content')
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -48,3 +50,4 @@
         </div>
     </form>
 </x-guest-layout>
+@endsection
